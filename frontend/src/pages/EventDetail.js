@@ -83,7 +83,7 @@ export async function action({ params, request }) {
   const response = await fetch('http://localhost:8084/events/' + eventId, {
     method: request.method,
     headers: {
-      'Authorization': 'Bearer' + getAuthToken,
+      'Authorization': 'Bearer' + token,
     }
   });
 
