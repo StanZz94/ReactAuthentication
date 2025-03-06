@@ -6,7 +6,7 @@ function AuthForm() {
 const data = useActionData();
 const navigation = useNavigation();
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const isLogin = searchParams.get('mode') === 'login';
   const isSubmitting = navigation.state === 'submitting';
 
