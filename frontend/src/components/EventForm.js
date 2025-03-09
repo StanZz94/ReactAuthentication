@@ -95,12 +95,12 @@ export async function action({ request, params }) {
     description: data.get('description'),
   };
 
-  let url = 'http://localhost:8084/events';
+  let url = 'http://localhost:8085/events';
   const token = getAuthToken();
 
   if (method === 'PATCH') {
     const eventId = params.eventId;
-    url = 'http://localhost:8084/events/' + eventId;
+    url = 'http://localhost:8085/events/' + eventId;
   }
 
   const response = await fetch(url, {
