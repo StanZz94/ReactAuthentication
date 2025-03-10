@@ -7,10 +7,20 @@ export function getTokenDuration() {
     const duration = expirationDate.getTime() - now.getTime();
 
     return duration;
-} 
+}
 
 export function getAuthToken() {
     const token = localStorage.getItem('token');
+
+    const tokenDuration = getTokenDuration();
+
+    if (!token) {
+        return;
+    }
+
+    if (tokenDuration < 0) {
+        return 'EXPIRED';
+    }
 
     return token;
 }
@@ -23,7 +33,7 @@ export function tokenLoader() {
 export function checkAuthLoader() {
     const token = getAuthToken();
 
-    if(!token) {
+    if (!token) {
         return redirect('/auth');
     }
 }
