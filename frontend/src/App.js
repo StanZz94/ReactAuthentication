@@ -48,7 +48,7 @@ const router = createBrowserRouter([
               {
                 path: 'edit',
                 element: <EditEventPage />,
-                loder: checkAuthLoader,
+                loader: checkAuthLoader,
                 action: manipulateEventAction,
               },
             ],
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
           {
             path: 'new',
             element: <NewEventPage />,
-            loder: checkAuthLoader,
+            loader: checkAuthLoader,
             action: manipulateEventAction,
           },
         ],
